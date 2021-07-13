@@ -16,6 +16,8 @@ app.get("/", (req, res) => {
 });
 
 // SERVER LISTENING
-app.listen(port, () => {
+const http = require('http').createServer(app)
+
+http.listen(port, () => {
   console.log(`Server listening on port ${port}`);
 });
