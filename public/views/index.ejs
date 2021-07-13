@@ -19,9 +19,11 @@
   <body class="bg-color">
     <section id="app" class="hero is-fullheight">
       <div class="hero-body">
-        <div class="container">
-          <h4 class="subtitle">Welcome to</h4>
-          <h1 class="title">Chat App</h1>
+        <div class="container mod-display">
+          <div class="app__info">
+            <img class="hero-img" src="../hero.svg" alt="chat app logo">
+            <h1 class="title-app">Chat App</h1>
+          </div>
           <template v-if="step === 'nick'">
             <div class="columns">
               <div class="column is-6">
@@ -48,7 +50,7 @@
               </div>
             </div>
           </template>
-          
+
           <template v-else>
             <div v-if="messages.length" class="chat-container">
               <div
@@ -75,24 +77,24 @@
                   v-model="message"
                   class="input is-medium"
                   type="text"
-                  placeholder="Ingrese el mensaje"
+                  placeholder="Message"
                 />
               </div>
               <div class="control">
-                <a @click="send" class="button is-info is-medium"> Enviar </a>
+                <a @click="send" class="btn btn-info mt-2"> Send </a>
               </div>
             </div>
           </template>
+          <footer class="end-position">
+            <p>
+              &copy;<a href="https://github.com/LaureanoVera" target="blank">
+                LaureanoVera</a
+              >
+            </p>
+          </footer>
         </div>
       </div>
 
-      <footer class="end-position">
-        <p>
-          &copy;<a href="https://github.com/LaureanoVera" target="blank">
-            LaureanoVera</a
-          >
-        </p>
-      </footer>
     </section>
 
     <!-- BOOTSTRAP -->
