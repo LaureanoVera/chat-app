@@ -1,6 +1,8 @@
+const socket = io();
+
 new Vue({
-  el: '#app',
+  el: "#app",
   data: {
     name: 'Laureano'
   }
-})
+});
