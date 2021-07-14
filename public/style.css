@@ -31,6 +31,7 @@
 }
 .login-app__btn:hover {
   background-color: var(--second-color);
+  color: var(--light);
 }
 
 .login-app__info {
@@ -42,11 +43,12 @@
 
 .login-app__img {
   height: 38vh;
-  filter: drop-shadow(2px 3px 1px var(--first-color));
+  filter: drop-shadow(2px 3px 0 var(--first-color));
   transition: .3s;
+  animation: move 7s infinite;
 }
 .login-app__img:hover {
-  filter: drop-shadow(-2px -3px 0 var(--first-color));
+  filter: drop-shadow(-4px -5px 0 var(--first-color));
 }
 
 .login-app__form {
@@ -95,15 +97,26 @@
 }
 
 .color-link {
-  color: var(--first-color);
+  color: var(--second-color);
+  opacity: .5;
   text-decoration: none;
   transition: .3s;
 }
 .color-link:hover {
-  color: var(--light);
+  color: var(--first-color);
+  opacity: 1;
 }
 
 .fixed-footer {
   position: fixed;
   bottom: 0;
+}
+
+@keyframes move {
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateY(.2em);
+  }
+  20%, 40%, 60%, 80%, 100% {
+    transform: translateY(-.2em);
+  }
 }
