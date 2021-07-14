@@ -15,86 +15,89 @@
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body class="bg-color">
     <section id="app" class="hero is-fullheight">
-      <div class="hero-body">
-        <div class="container mod-display">
-          <div class="app__info">
-            <img class="hero-img" src="../hero.svg" alt="chat app logo">
-            <h1 class="title-app">Chat App</h1>
-          </div>
-          <template v-if="step === 'nick'">
-            <div class="columns">
-              <div class="column is-6">
-                <div class="field has-addons">
-                  <div class="input-group mb-3">
-                    <button
-                      @click="signIn"
-                      class="control btn btn-outline-secondary"
-                      type="button"
-                      id="button-addon1"
-                    >
-                      Send
-                    </button>
-                    <input
-                      v-model="nick"
-                      type="text"
-                      class="form-control"
-                      placeholder="Username"
-                      aria-label="Example text with button addon"
-                      aria-describedby="button-addon1"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </template>
-
-          <template v-else>
-            <div v-if="messages.length" class="chat-container">
-              <div
-                v-for="item in messages"
-                :class="{ 'has-text-right': nick === item.nick }"
-              >
-                <div
-                  class="box chat-message"
-                  :class="{ 'me': nick === item.nick }"
-                >
-                  <span class="has-text-weight-bold">{{ item.nick }}</span> -
-                  {{ item.message }}
-                  <span
-                    class="is-italic has-text-grey-light is-size-7"
-                    >{{ new Date(item.date).toLocaleDateString() }}</span
-                  >
-                </div>
-              </div>
-            </div>
-
-            <div class="field has-addons">
-              <div class="control is-expanded">
-                <input
-                  v-model="message"
-                  class="input is-medium"
-                  type="text"
-                  placeholder="Message"
-                />
-              </div>
-              <div class="control">
-                <a @click="send" class="btn btn-info mt-2"> Send </a>
-              </div>
-            </div>
-          </template>
-          <footer class="end-position">
-            <p>
-              &copy;<a href="https://github.com/LaureanoVera" target="blank">
-                LaureanoVera</a
-              >
-            </p>
-          </footer>
+      <div class="container mod-display">
+        <div class="app__info">
+          <img class="hero-img" src="../hero.svg" alt="chat app logo" />
+          <h1 class="title-app">Chat App</h1>
         </div>
-      </div>
 
+        <template v-if="step === 'nick'">
+          <div class="input-group mb-3">
+            <button
+              @click="signIn"
+              class="control btn btn-outline-secondary"
+              type="button"
+              id="button-addon1"
+            >
+              Send
+            </button>
+            <input
+              v-model="nick"
+              type="text"
+              class="form-control"
+              placeholder="Username"
+              aria-label="Example text with button addon"
+              aria-describedby="button-addon1"
+            />
+          </div>
+        </template>
+        <template v-else>
+          <div v-if="messages.length" class="chat-container">
+            <div
+              v-for="item in messages"
+              :class="{ 'has-text-right': nick === item.nick }"
+            >
+              <div
+                class="box chat-message"
+                :class="{ 'me': nick === item.nick }"
+              >
+                <span class="has-text-weight-bold">{{ item.nick }}</span> -
+                {{ item.message }}
+                <span
+                  class="is-italic has-text-grey-light is-size-7"
+                  >{{ new Date(item.date).toLocaleDateString() }}</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="field has-addons">
+            <div class="control is-expanded">
+              <input
+                v-model="message"
+                class="input is-medium"
+                type="text"
+                placeholder="Message"
+              />
+            </div>
+            <div class="control">
+              <a @click="send" class="btn btn-info mt-2"> Send </a>
+            </div>
+          </div>
+        </template>
+
+        <footer class="end-position">
+          <p>
+            &copy;<a
+              href="https://github.com/LaureanoVera"
+              target="blank"
+              class="color-link"
+            >
+              LaureanoVera</a
+            >
+          </p>
+        </footer>
+      </div>
     </section>
 
     <!-- BOOTSTRAP -->
