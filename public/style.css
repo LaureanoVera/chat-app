@@ -22,12 +22,12 @@
 }
 
 .login-app__input {
-  max-width: 420px;
+  width: 420px;
 }
 
 .login-app__btn {
   background-color: var(--first-color);
-  max-width: 420px;
+  width: 420px;
 }
 .login-app__btn:hover {
   background-color: var(--second-color);
