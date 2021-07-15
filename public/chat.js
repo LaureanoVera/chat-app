@@ -3,7 +3,7 @@ const socket = io();
 new Vue({
   el: "#app",
   data: {
-    step: "nick ",
+    step: "nick",
     nick: null,
     message: null,
     messages: [],
