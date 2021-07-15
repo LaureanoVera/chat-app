@@ -32,19 +32,18 @@
             </div>
         </template>
         <template v-else>
-          <div  class="app__chat">
+          <div class="app__chat">
             <div
               v-for="item in messages"
               :class="{ 'app__chat--user': nick === item.nick }"
             >
+              <span class="app__chat-name">{{ item.nick }}</span>
               <div
                 class="app__message"
-                :class="{ 'me': nick === item.nick }"
+                :class="{ 'app__message--user': nick === item.nick }"
               >
-                <div class="app__message-content">
-                  <span class="app__message--user">{{ item.nick }}</span> -
+              
                   <span class="app__message--text">{{ item.message }}</span>
-                </div>
                 <span
                   class="app__message--date"
                   >{{ new Date(item.date).toLocaleDateString() }}</span
