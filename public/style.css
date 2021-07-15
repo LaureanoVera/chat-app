@@ -43,12 +43,9 @@
 
 .login-app__img {
   height: 38vh;
-  filter: drop-shadow(2px 3px 0 var(--first-color));
   transition: .3s;
   animation: move 7s infinite;
-}
-.login-app__img:hover {
-  filter: drop-shadow(-4px -5px 0 var(--first-color));
+  filter: drop-shadow(2px 3px 0 var(--first-color));  
 }
 
 .login-app__form {
@@ -80,6 +77,21 @@
 }
 /* LOGIN */
 
+/* CHAT */
+.app__chat {
+  height: 70vh;
+  width: 90%;
+  /* border: 1px solid red; */
+  margin: 0 auto;
+  /* overflow: scroll; */
+}
+
+.app__message {
+  color: var(--first-color);
+  /* color: var(--light); */
+  /* background-color: var(--first-color); */
+}
+/* /CHAT */
 .mod-display {
   height: 100vh;
   width: 100vw;

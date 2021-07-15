@@ -32,16 +32,17 @@
             </div>
         </template>
         <template v-else>
-          <div v-if="messages.length" class="chat-container">
+          <div  class="app__chat">
             <div
               v-for="item in messages"
               :class="{ 'has-text-right': nick === item.nick }"
             >
               <div
-                class="box chat-message"
+                class="app__message"
                 :class="{ 'me': nick === item.nick }"
               >
-                <span class="has-text-weight-bold">{{ item.nick }}</span> -
+                <span class="badge bg-secondary">{{ item.nick }}</span> -
+                <!-- <span class="has-text-weight-bold">{{ item.nick }}</span> - -->
                 {{ item.message }}
                 <span
                   class="is-italic has-text-grey-light is-size-7"
@@ -50,18 +51,10 @@
               </div>
             </div>
           </div>
-
-          <div class="field has-addons">
-            <div class="control is-expanded">
-              <input
-                v-model="message"
-                class="input is-medium"
-                type="text"
-                placeholder="Message"
-              />
-            </div>
-            <div class="control">
-              <a @click="send" class="btn btn-info mt-2"> Send </a>
+          <div class="app__form">
+            <div class="input-group mt-2">
+              <input  v-model="message" type="text" class="form-control" placeholder="Message" aria-label="Recipient's username" aria-describedby="button-addon2">
+              <button @click="send" class="btn btn-outline-secondary" type="button" id="button-addon2"><i class="far fa-paper-plane"></i></button>
             </div>
           </div>
         </template>
