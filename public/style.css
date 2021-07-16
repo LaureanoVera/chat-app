@@ -90,6 +90,15 @@
   color: var(--light);
 }
 
+.app__chat-name--user {
+  color: var(--first-color);
+}
+
+.app__chat--other {
+  width: 30%;
+  align-self: flex-start;
+} 
+
 .app__chat--user {
   width: 30%;
   align-self: flex-end;
@@ -100,10 +109,15 @@
   color: var(--first-color);
   display: grid;
   color: var(--light);
-  background-color: var(--second-color);
+  background-color: var(--first-color);
   padding: .2em .4em;
   line-height: 1.1;
   border-radius:0 .32em .26em .32em;
+  color: var(--dark);
+}
+
+.app__message--user {
+  background-color: var(--light);
 }
 
 .app__message--date {

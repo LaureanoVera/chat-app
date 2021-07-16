@@ -35,9 +35,13 @@
           <div class="app__chat">
             <div
               v-for="item in messages"
+              class="app__chat--other"
               :class="{ 'app__chat--user': nick === item.nick }"
             >
-              <span class="app__chat-name">{{ item.nick }}</span>
+              <span
+                class="app__chat-name"
+                :class="{ 'app__chat-name--user': nick === item.nick }"
+              >{{ item.nick }}</span>
               <div
                 class="app__message"
                 :class="{ 'app__message--user': nick === item.nick }"
