@@ -3,8 +3,8 @@ const socket = io();
 new Vue({
   el: "#app",
   data: {
-    step: "nick",
-    nick: null,
+    step: "nick ",
+    nick: "null",
     message: null,
     messages: [],
   },
@@ -33,7 +33,6 @@ new Vue({
       setTimeout(() => {
         // scroll to bottom
         const chatContainer = document.querySelector(".chat-container");
-        chatContainer.scrollTop = chatContainer.scrollHeight;
       }, 10);
     });
   },
